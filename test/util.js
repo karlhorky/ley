@@ -32,7 +32,7 @@ glob('usage', async ctx => {
 });
 
 glob('fileRegex option', async ctx => {
-	const out = await $.glob(ctx.dir, /00[123]\.js/);
+	const out = await $.glob(ctx.dir, '00[123]\.js$');
 	assert.ok(Array.isArray(out), 'returns Promise<Array>');
 	assert.is(out.length, 3, '~> has 3 items');
 
